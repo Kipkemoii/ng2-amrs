@@ -87,6 +87,7 @@ export class SurgeReportBaseComponent implements OnInit {
       } else {
         this.showInfoMessage = false;
         this.columnDefs = data.sectionDefinitions;
+        console.log('COLUMN DEFS: ' + JSON.stringify(data.sectionDefinitions));
         this.surgeReportSummaryData = data.result;
         this.calculateTotalSummary();
         this.isLoading = false;

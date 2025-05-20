@@ -43,4 +43,42 @@ export class PreAppointmentOutreachResourceService {
       );
     return this.cacheService.cacheRequest(url, urlParams, request);
   }
+
+  public getPreAppointmentSummary(params: any) {
+    const urlParams: HttpParams = new HttpParams()
+      .set('locationUuids', params.locationUuids)
+      .set('year', params.year)
+      .set('month', params.month);
+
+    const url = this.getUrl('ml-summary');
+    const request = this.http
+      .get<any>(url, {
+        params: urlParams
+      })
+      .pipe(
+        map((response: any) => {
+          return response.result;
+        })
+      );
+    return this.cacheService.cacheRequest(url, urlParams, request);
+  }
+
+  public getPeerPatients(params: any) {
+    const urlParams: HttpParams = new HttpParams().set(
+      'creator',
+      params.creator
+    );
+
+    const url = this.getUrl('pt4a');
+    const request = this.http
+      .get<any>(url, {
+        params: urlParams
+      })
+      .pipe(
+        map((response: any) => {
+          return response;
+        })
+      );
+    return this.cacheService.cacheRequest(url, urlParams, request);
+  }
 }

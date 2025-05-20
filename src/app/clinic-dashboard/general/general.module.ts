@@ -6,17 +6,18 @@ import { AgGridModule } from 'ag-grid-angular/main';
 
 import { ClinicLabOrdersComponent } from './clinic-lab-orders/clinic-lab-orders.component';
 import { PatientProgramEnrollmentModule } from '../../patients-program-enrollment/patients-program-enrollment.module';
-
+import { PreAppointmentSummaryComponent } from './pre-appointment-summary/pre-appointment-summary.component';
 @NgModule({
   imports: [
     GroupManagerModule,
     CommonModule,
     FormsModule,
     PatientProgramEnrollmentModule,
-    AgGridModule
+    AgGridModule,
+    FormsModule
   ],
-  exports: [ClinicLabOrdersComponent],
-  declarations: [ClinicLabOrdersComponent],
+  exports: [ClinicLabOrdersComponent, PreAppointmentSummaryComponent],
+  declarations: [ClinicLabOrdersComponent, PreAppointmentSummaryComponent],
   providers: []
 })
 export class GeneralModule {}

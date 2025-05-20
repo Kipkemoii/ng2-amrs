@@ -19,6 +19,9 @@ import { DailyScheduleClinicFlowComponent } from './clinic-flow/daily-schedule-c
 import { ProgramVisitEncounterSearchModule } from '../../program-visit-encounter-search/program-visit-encounter-search.module';
 import { GeneralModule } from '../general/general.module';
 import { ChangeDepartmentModule } from '../change-department/change-department.module';
+import { Pt4aComponent } from './pt4a/pt4a.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { Pt4aService } from 'src/app/etl-api/pt4a-resource.service';
 
 @NgModule({
   imports: [
@@ -42,8 +45,9 @@ import { ChangeDepartmentModule } from '../change-department/change-department.m
   declarations: [
     CdmDailyScheduleComponent,
     CdmMonthlyScheduleComponent,
-    DailyScheduleClinicFlowComponent
+    DailyScheduleClinicFlowComponent,
+    Pt4aComponent
   ],
-  providers: []
+  providers: [Pt4aService]
 })
 export class CdmModule {}

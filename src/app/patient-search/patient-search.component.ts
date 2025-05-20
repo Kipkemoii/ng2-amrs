@@ -108,6 +108,7 @@ export class PatientSearchComponent implements OnInit, OnDestroy {
 
   public onResultsFound(results) {
     if (results.length > 0) {
+      console.log('RESULTS ARE:  ' + JSON.stringify(results));
       this.patients = results;
       this.totalPatients = this.patients.length;
       this.hideResults = false;
@@ -177,6 +178,7 @@ export class PatientSearchComponent implements OnInit, OnDestroy {
   }
 
   public selectPatient(patient) {
+    // console.log('PATIENT IS: ' + JSON.stringify(patient));
     this.patientSelected.emit(patient);
     this.hideResults = true;
   }
